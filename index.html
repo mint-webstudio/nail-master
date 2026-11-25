@@ -83,7 +83,7 @@ h1,h2{font-family:'MirraK2','Playfair Display',Georgia,serif;font-weight:400}bod
 .nm span{display:block}
 .nm span+span{text-align:right;padding-right:6px}
 *{-webkit-tap-highlight-color:transparent}
-*{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.bt,.cl,.bt *,.cl *{-webkit-user-select:none;user-select:none}.bt.tap,.cl.tap,.bt.tap,.cl.tap,.bt:focus,.cl:focus{color:#111!important;opacity:1!important;filter:none!important;border-color:#fff!important;transform:none!important}
+*{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.bt,.cl,.bt *,.cl *{-webkit-user-select:none;user-select:none}.bt.tap,.cl.tap,.bt.tap,.cl.tap{color:#111!important;opacity:1!important;filter:none!important;border-color:#fff!important;transform:none!important}
 
 .msw .ar,.msw .ar *{transition:none!important;animation:none!important}.msw .ar .arrow-top:after,.msw .ar .arrow-bottom:after{display:none!important}.msw .ar:active .arrow,.msw .ar.l:active .arrow,.msw .ar:hover .arrow{transform:none!important}.msw .ar.l .arrow{transform:scaleX(-1)!important}
 #services{padding-top:8px}.fact:last-child{margin-bottom:0}
@@ -197,6 +197,12 @@ body{background-color:#f2f2f2;background-blend-mode:multiply}
 
 .rvt{font-weight:400}
 </style>
+<style id="press">
+/* touch press: fill driven by --p from JS, retracts quickly on early release */
+.bt.pr::before,.bt.pr::after,.cl.pr::before,.cl.pr::after{scale:var(--p,0)!important;transition:none!important}
+.bt.rel::before,.bt.rel::after,.cl.rel::before,.cl.rel::after{transition:scale 200ms ease-out!important}
+@media (prefers-reduced-motion:reduce){.bt.pr::before,.bt.pr::after,.cl.pr::before,.cl.pr::after{transition:none!important}}
+</style>
 </head><body><main class="w">
 <section class="p"><small class="sub rv">майстер манікюру &amp; нарощування</small><h1 class="nm rv"><span class="sr-only">Олена Коваль</span><span class="nw w1" aria-hidden="true"><svg class="nl" viewBox="315 230 492 638" style="width:0.8332em;margin-left:0.0000em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M543 226 L520 229 L490 236 L467 244 L442 256 L408 279 L393 292 L375 311 L362 328 L347 352 L335 377 L326 402 L321 421 L316 452 L315 504 L321 546 L326 565 L338 597 L354 626 L366 643 L377 656 L397 675 L414 688 L433 700 L458 712 L478 719 L519 728 L539 729 L540 730 L575 730 L617 724 L646 715 L677 701 L701 686 L714 676 L749 641 L763 622 L774 604 L786 579 L796 551 L800 536 L805 507 L806 484 L807 483 L807 459 L804 428 L800 407 L786 364 L774 340 L759 317 L744 299 L723 279 L703 264 L684 253 L667 245 L639 235 L617 230 L587 226ZM549 229 L577 229 L602 232 L620 236 L645 245 L663 254 L679 264 L697 278 L721 302 L730 313 L744 334 L758 361 L766 381 L773 405 L778 431 L781 460 L781 496 L780 497 L779 517 L775 541 L768 568 L751 609 L743 623 L727 646 L701 674 L685 687 L662 702 L641 712 L621 719 L592 725 L571 726 L570 727 L549 727 L523 724 L498 718 L479 711 L462 703 L438 688 L422 675 L403 656 L390 640 L376 619 L364 596 L357 579 L351 561 L344 530 L340 493 L340 463 L341 462 L342 439 L347 410 L352 391 L361 366 L373 341 L392 312 L400 302 L421 281 L440 266 L454 257 L476 246 L498 238 L523 232Z"/></svg><svg class="nl" viewBox="789 230 264 638" style="width:0.4471em;margin-left:-0.0390em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M855 382 L854 385 L869 387 L877 391 L885 399 L890 409 L893 423 L892 473 L888 510 L878 576 L864 637 L857 657 L849 673 L839 684 L828 690 L806 694 L796 698 L789 707 L790 720 L794 725 L804 729 L815 728 L826 723 L836 714 L843 705 L857 676 L867 643 L880 582 L893 495 L899 426 L901 414 L906 400 L915 390 L925 386 L973 385 L984 387 L990 390 L994 394 L999 405 L1001 419 L1001 689 L999 702 L994 713 L990 717 L984 720 L970 722 L971 725 L1052 725 L1053 722 L1039 720 L1032 716 L1025 706 L1023 696 L1023 686 L1022 685 L1022 419 L1024 404 L1029 394 L1039 387 L1052 385 L1053 383 L1052 382Z"/></svg><svg class="nl" viewBox="1079 230 328 638" style="width:0.5555em;margin-left:0.0423em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M1282 378 L1239 378 L1211 382 L1177 393 L1146 411 L1122 433 L1105 456 L1091 485 L1083 513 L1079 547 L1081 584 L1088 616 L1102 648 L1122 676 L1142 695 L1159 707 L1170 713 L1189 721 L1206 726 L1234 730 L1268 729 L1290 725 L1313 717 L1327 710 L1340 702 L1355 690 L1376 667 L1391 643 L1403 611 L1407 586 L1407 562 L1404 552 L1399 551 L1399 557 L1402 567 L1402 593 L1400 606 L1396 621 L1390 636 L1374 662 L1356 681 L1332 698 L1304 710 L1273 716 L1244 716 L1226 713 L1200 705 L1182 696 L1163 683 L1145 666 L1133 651 L1119 628 L1113 614 L1105 586 L1102 562 L1102 532 L1104 514 L1111 485 L1123 458 L1132 445 L1392 445 L1393 444 L1393 441 L1388 431 L1378 418 L1366 407 L1354 399 L1341 392 L1322 385 L1305 381ZM1135 441 L1140 433 L1158 415 L1178 401 L1194 393 L1214 386 L1246 381 L1283 382 L1304 386 L1324 393 L1346 406 L1360 420 L1366 431 L1365 439 L1360 442 L1136 442Z"/></svg><svg class="nl" viewBox="1431 230 249 638" style="width:0.4217em;margin-left:0.0406em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M1433 382 L1431 384 L1432 385 L1448 388 L1456 395 L1460 404 L1462 414 L1462 434 L1463 435 L1463 677 L1462 678 L1461 699 L1456 712 L1450 718 L1446 720 L1433 721 L1431 724 L1432 725 L1513 725 L1514 722 L1512 721 L1503 721 L1493 716 L1486 705 L1484 695 L1484 683 L1483 682 L1483 547 L1485 538 L1491 533 L1621 533 L1627 538 L1629 549 L1628 695 L1625 707 L1619 716 L1609 721 L1598 722 L1599 725 L1679 725 L1680 722 L1664 719 L1656 712 L1652 704 L1650 693 L1650 672 L1649 671 L1650 663 L1649 645 L1650 644 L1649 641 L1649 429 L1650 428 L1651 407 L1656 395 L1664 388 L1679 385 L1680 383 L1678 382 L1599 382 L1598 383 L1599 385 L1608 386 L1616 389 L1624 398 L1628 412 L1629 512 L1628 521 L1623 528 L1620 529 L1492 529 L1489 528 L1485 524 L1483 516 L1484 411 L1487 399 L1494 390 L1499 387 L1513 385 L1514 383 L1513 382Z"/></svg><svg class="nl" viewBox="1705 230 272 638" style="width:0.4606em;margin-left:0.0440em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M1752 391 L1739 400 L1722 419 L1712 439 L1707 457 L1705 476 L1706 496 L1712 519 L1718 531 L1729 544 L1736 549 L1747 554 L1757 555 L1765 553 L1771 548 L1774 542 L1773 531 L1768 525 L1761 522 L1744 519 L1734 515 L1724 506 L1717 494 L1713 478 L1714 449 L1720 430 L1731 413 L1749 397 L1772 386 L1794 382 L1810 382 L1823 384 L1832 387 L1850 397 L1863 410 L1869 419 L1878 440 L1882 458 L1883 488 L1884 489 L1884 594 L1883 599 L1881 601 L1764 634 L1746 640 L1737 645 L1725 657 L1718 672 L1717 694 L1722 709 L1736 723 L1744 727 L1763 730 L1775 729 L1789 726 L1803 721 L1820 712 L1844 694 L1856 682 L1867 668 L1882 643 L1883 644 L1883 674 L1885 693 L1888 704 L1894 714 L1903 722 L1911 726 L1919 728 L1935 728 L1949 723 L1963 711 L1970 699 L1975 685 L1977 673 L1976 638 L1971 620 L1968 614 L1966 613 L1964 614 L1964 620 L1968 628 L1973 646 L1974 672 L1970 691 L1962 707 L1953 716 L1940 722 L1927 722 L1918 718 L1912 712 L1908 705 L1904 685 L1904 472 L1899 443 L1890 421 L1882 409 L1866 394 L1850 385 L1834 380 L1821 378 L1786 379 L1764 385ZM1883 605 L1883 626 L1879 639 L1871 655 L1855 676 L1835 694 L1824 701 L1808 708 L1787 713 L1770 713 L1759 710 L1754 707 L1745 698 L1740 685 L1739 666 L1743 648 L1748 643 L1847 613 L1851 613 L1880 604Z"/></svg></span><span class="nw w2" aria-hidden="true"><svg class="nl" viewBox="2101 230 365 638" style="width:0.6181em;margin-left:0.0000em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M2349 230 L2348 231 L2349 233 L2363 235 L2372 239 L2381 248 L2384 255 L2385 262 L2384 272 L2381 282 L2366 307 L2208 528 L2208 531 L2417 725 L2465 725 L2466 723 L2450 717 L2429 701 L2241 530 L2224 513 L2229 504 L2377 296 L2396 272 L2413 255 L2428 244 L2442 237 L2459 233 L2458 230 L2455 231 L2358 231ZM2102 230 L2101 233 L2116 235 L2128 243 L2132 249 L2136 266 L2136 279 L2137 280 L2137 676 L2135 696 L2132 706 L2129 711 L2123 717 L2117 720 L2101 722 L2102 725 L2192 725 L2192 722 L2181 721 L2173 718 L2164 709 L2160 698 L2159 678 L2158 677 L2158 274 L2160 256 L2166 243 L2175 236 L2192 233 L2191 230 L2181 231Z"/></svg><svg class="nl" viewBox="2437 230 351 638" style="width:0.5944em;margin-left:-0.0847em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M2597 378 L2568 383 L2552 388 L2530 398 L2501 417 L2476 442 L2460 466 L2449 489 L2443 507 L2437 542 L2437 575 L2440 596 L2444 612 L2450 629 L2459 647 L2468 661 L2480 676 L2497 692 L2522 709 L2539 717 L2567 726 L2594 730 L2625 730 L2659 724 L2679 717 L2699 707 L2721 692 L2744 670 L2763 644 L2774 622 L2780 606 L2787 572 L2788 536 L2783 503 L2773 474 L2761 452 L2753 441 L2740 426 L2730 417 L2704 399 L2688 391 L2668 384 L2635 378ZM2599 381 L2629 381 L2655 386 L2683 398 L2704 413 L2722 431 L2731 443 L2748 473 L2759 507 L2764 545 L2764 563 L2763 564 L2762 584 L2754 619 L2739 652 L2726 671 L2704 694 L2681 710 L2669 716 L2652 722 L2619 727 L2603 727 L2586 725 L2561 718 L2537 706 L2515 689 L2494 665 L2477 636 L2465 599 L2461 571 L2461 538 L2465 508 L2476 473 L2493 443 L2504 429 L2518 415 L2539 400 L2568 387Z"/></svg><svg class="nl" viewBox="2814 230 218 638" style="width:0.3692em;margin-left:0.0423em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M2815 382 L2814 383 L2815 385 L2829 387 L2833 389 L2839 395 L2843 404 L2845 417 L2845 690 L2843 703 L2839 712 L2832 719 L2821 722 L2815 722 L2814 724 L2815 725 L2932 725 L2954 721 L2974 714 L2993 703 L3006 692 L3015 681 L3024 665 L3029 651 L3032 633 L3032 615 L3030 601 L3025 585 L3017 570 L3011 562 L2995 547 L2986 541 L2969 533 L2950 527 L2928 524 L2926 522 L2943 516 L2960 507 L2977 491 L2987 473 L2991 457 L2991 435 L2987 420 L2978 405 L2968 396 L2957 390 L2938 384 L2924 382ZM2870 526 L2873 525 L2920 526 L2938 530 L2954 536 L2973 548 L2988 563 L2994 571 L3002 586 L3007 602 L3009 616 L3008 644 L3002 666 L2998 675 L2988 690 L2972 705 L2954 715 L2942 719 L2924 722 L2888 722 L2878 719 L2873 715 L2869 708 L2866 693 L2866 530ZM2884 386 L2913 385 L2925 387 L2940 393 L2957 408 L2963 418 L2967 429 L2969 441 L2969 459 L2967 471 L2961 487 L2955 496 L2943 508 L2929 516 L2920 519 L2898 522 L2875 522 L2869 520 L2866 516 L2866 414 L2868 402 L2871 395 L2878 388Z"/></svg><svg class="nl" viewBox="3061 230 218 638" style="width:0.3692em;margin-left:0.0542em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3118 386 L3098 398 L3086 409 L3073 428 L3066 445 L3062 464 L3061 485 L3065 510 L3073 529 L3082 541 L3089 547 L3104 554 L3109 555 L3118 554 L3124 551 L3130 542 L3129 531 L3124 525 L3113 521 L3103 520 L3089 514 L3079 504 L3073 493 L3069 475 L3070 449 L3075 433 L3085 416 L3094 406 L3107 396 L3120 389 L3132 385 L3148 382 L3167 382 L3186 386 L3197 391 L3206 397 L3219 410 L3228 424 L3234 440 L3238 459 L3239 487 L3240 488 L3240 597 L3235 602 L3120 634 L3103 640 L3094 645 L3082 656 L3075 670 L3073 680 L3073 690 L3076 704 L3081 713 L3090 722 L3100 727 L3116 730 L3125 730 L3152 724 L3173 714 L3201 693 L3218 675 L3238 644 L3240 651 L3239 653 L3240 701 L3244 716 L3251 725 L3257 728 L3267 730 L3278 729 L3279 728 L3278 726 L3271 724 L3264 716 L3261 706 L3260 696 L3260 475 L3256 446 L3248 424 L3239 410 L3225 396 L3206 385 L3194 381 L3178 378 L3149 378 L3129 382ZM3239 605 L3240 607 L3239 626 L3234 642 L3229 652 L3213 674 L3191 694 L3167 707 L3143 713 L3127 713 L3115 710 L3110 707 L3101 698 L3096 684 L3095 668 L3098 652 L3104 644 L3112 640 L3158 626 L3179 621 L3237 604Z"/></svg><svg class="nl" viewBox="3290 230 264 638" style="width:0.4471em;margin-left:0.0813em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3357 382 L3356 385 L3372 388 L3384 396 L3391 407 L3395 425 L3395 454 L3394 455 L3394 468 L3391 498 L3378 583 L3366 635 L3359 656 L3352 670 L3347 677 L3337 686 L3325 691 L3307 694 L3297 698 L3293 702 L3290 708 L3290 716 L3292 721 L3297 726 L3308 729 L3319 727 L3327 723 L3339 712 L3346 702 L3359 674 L3370 636 L3383 572 L3395 490 L3401 422 L3404 408 L3408 399 L3416 390 L3425 386 L3467 385 L3486 387 L3490 389 L3496 395 L3501 408 L3502 437 L3503 438 L3503 671 L3502 672 L3502 693 L3499 707 L3494 715 L3486 720 L3472 722 L3471 724 L3472 725 L3553 725 L3554 724 L3553 722 L3543 721 L3532 715 L3526 705 L3524 695 L3524 680 L3523 679 L3523 423 L3525 406 L3529 396 L3536 389 L3544 386 L3551 386 L3554 383 L3553 382Z"/></svg><svg class="nl" viewBox="3580 230 213 638" style="width:0.3607em;margin-left:0.0948em" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3581 382 L3580 384 L3581 385 L3594 387 L3600 390 L3604 394 L3608 401 L3611 415 L3611 691 L3609 703 L3605 712 L3599 718 L3595 720 L3581 722 L3580 724 L3581 725 L3684 726 L3708 723 L3732 716 L3755 703 L3772 687 L3783 670 L3788 658 L3793 634 L3793 614 L3791 600 L3785 582 L3775 565 L3761 550 L3750 542 L3735 534 L3718 528 L3692 523 L3645 522 L3636 520 L3632 515 L3632 418 L3633 409 L3637 397 L3643 390 L3653 386 L3660 386 L3663 383 L3662 382ZM3638 525 L3685 526 L3699 529 L3713 534 L3732 545 L3746 558 L3755 570 L3764 588 L3770 615 L3770 636 L3765 661 L3758 677 L3745 695 L3735 704 L3714 716 L3701 720 L3687 722 L3654 722 L3644 719 L3637 712 L3635 708 L3632 692 L3632 530Z"/></svg></span></h1>
 <div class="fr rv"><div class="ph"><img fetchpriority="high" loading="eager" src="assets/img-01-1105.webp" srcset="assets/img-01-640.webp 426w, assets/img-01-1080.webp 719w, assets/img-01-1105.webp 736w" sizes="(max-width: 600px) 90vw, 480px" alt="Майстер з палітрою кольорів"></div></div><a class="bt rv" href="#contacts"><span class="lbl">записатися</span><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M2 2l15 15M18 7v11H7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a></section>
@@ -219,67 +225,120 @@ function jump(h){var t=d.querySelector(h);if(!t)return;w.scrollTo(0,Math.max(0,t
 var tch=('ontouchstart' in w)||navigator.maxTouchPoints>0,BT=d.querySelectorAll('.bt,.cl');
 if(tch)d.querySelectorAll('a.cl').forEach(function(a){a.setAttribute('data-url',a.getAttribute('href'));a.removeAttribute('href');a.removeAttribute('target');a.setAttribute('role','link');a.setAttribute('tabindex','0');a.style.cursor='pointer';a.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();a.click()}})});
 function act(a){var h=a.getAttribute('href'),u=a.getAttribute('data-url');if(h&&h.charAt(0)==='#')jump(h);else if(u){w.location.href=u}else{a.__go=true;a.click()}}
-var cur=null,FILL=520,lastType='';
+var cur=null,FILL=520,TAP=150,lastType='';
 function hit(e){return e.target&&e.target.closest?e.target.closest('.bt,.cl'):null}
-/* one place that clears a button's press state */
-function stop(a){if(a.__t){clearTimeout(a.__t);a.__t=null}a.classList.remove('tap');a.__busy=false}
-function resetAll(){d.querySelectorAll('.bt,.cl').forEach(stop);cur=null}
-/* the fill only ever fires the action; it runs from a finished press or click */
-function fire(a){
+function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+function clearT(a){if(a.__t){clearTimeout(a.__t);a.__t=null}if(a.__raf){cancelAnimationFrame(a.__raf);a.__raf=0}}
+/* one place that returns a button to its resting state */
+function reset(a){clearT(a);a.__busy=false;a.__st=null;a.classList.remove('tap','pr','rel');a.style.removeProperty('--p')}
+function resetAll(){cur=null;d.querySelectorAll('.bt,.cl').forEach(reset)}
+
+/* mouse and keyboard: hover shows the fill, a click completes it and acts */
+function mouseFire(a){
   a.__t=null;
   if(a.__busy||!a.classList.contains('tap'))return;
-  if(cur&&cur.a===a)cur=null;
   a.__busy=true;
   var h=a.getAttribute('href');
   act(a);
-  setTimeout(function(){stop(a)},h&&h.charAt(0)==='#'?300:900);
+  setTimeout(function(){reset(a)},h&&h.charAt(0)==='#'?300:900);
 }
-function begin(a){
+function mouseBegin(a){
   if(a.__busy)return;
   a.classList.add('tap');
   clearTimeout(a.__t);
-  a.__t=setTimeout(function(){fire(a)},FILL);
+  a.__t=setTimeout(function(){mouseFire(a)},FILL);
 }
-/* released or dragged early: fill goes back at once */
-function cancel(a){
-  if(!a)return;
+function mouseCancel(a){
   clearTimeout(a.__t);a.__t=null;
   if(!a.__busy)a.classList.remove('tap');
 }
-/* touch and pen */
+
+/* touch and pen: the fill follows the finger in real time */
+function press(a,e){
+  if(a.__busy)return;
+  clearT(a);
+  a.classList.remove('rel');
+  a.classList.add('tap','pr');
+  a.style.setProperty('--p',0);
+  var st={a:a,x:e.clientX,y:e.clientY,t0:performance.now(),phase:'hold',done:false};
+  cur=st;a.__st=st;
+  tick(st);
+}
+function tick(st){
+  var a=st.a;
+  a.__raf=0;
+  if(st.done)return;
+  var x=Math.min(1,(performance.now()-st.t0)/FILL);
+  a.style.setProperty('--p',ease(x));
+  if(x>=1){
+    /* full fill reached: act once */
+    st.done=true;
+    if(cur===st)cur=null;
+    a.__st=null;
+    a.__busy=true;
+    var h=a.getAttribute('href');
+    act(a);
+    a.__t=setTimeout(function(){reset(a)},h&&h.charAt(0)==='#'?300:900);
+    return;
+  }
+  a.__raf=requestAnimationFrame(function(){tick(st)});
+}
+/* finger lifted: a short tap completes the fill; a longer hold retracts it at once */
+function release(st){
+  if(!st||st.done)return;
+  if(cur===st)cur=null;
+  var a=st.a;
+  if(performance.now()-st.t0<TAP){st.phase='finish';return}
+  st.done=true;
+  clearT(a);
+  a.classList.add('rel');
+  a.style.setProperty('--p',0);
+  a.__t=setTimeout(function(){reset(a)},200);
+}
+function cancel(st){
+  if(!st||st.done)return;
+  st.done=true;
+  if(cur===st)cur=null;
+  var a=st.a;
+  clearT(a);
+  a.classList.add('rel');
+  a.style.setProperty('--p',0);
+  a.__t=setTimeout(function(){reset(a)},200);
+}
+
+/* pointer input */
 d.addEventListener('pointerdown',function(e){
   lastType=e.pointerType;
-  if(e.button>0)return;
+  if(e.button>0||e.pointerType==='mouse')return;
   var a=hit(e);
-  if(cur&&cur.a!==a)resetAll();
-  if(!a||e.pointerType==='mouse')return;
-  cur={a:a,x:e.clientX,y:e.clientY};
-  begin(a);
+  if(cur&&(!a||cur.a!==a))cancel(cur);
+  if(a)press(a,e);
 },true);
 d.addEventListener('pointermove',function(e){
   if(!cur||e.pointerType==='mouse')return;
-  if(Math.abs(e.clientX-cur.x)>10||Math.abs(e.clientY-cur.y)>10){cancel(cur.a);cur=null}
+  if(Math.abs(e.clientX-cur.x)>10||Math.abs(e.clientY-cur.y)>10)cancel(cur);
 },true);
-function release(e){if(cur&&e.pointerType!=='mouse'){cancel(cur.a);cur=null}}
-w.addEventListener('pointerup',release,true);
-w.addEventListener('pointercancel',release,true);
-w.addEventListener('touchend',function(){if(cur){cancel(cur.a);cur=null}},true);
-w.addEventListener('touchcancel',function(){if(cur){cancel(cur.a);cur=null}},true);
-/* mouse: hover shows the fill only; a click completes it and acts */
+w.addEventListener('pointerup',function(e){
+  if(e.pointerType!=='mouse'&&cur)release(cur);
+},true);
+w.addEventListener('pointercancel',function(e){
+  if(e.pointerType!=='mouse'&&cur)cancel(cur);
+},true);
+w.addEventListener('touchcancel',function(){if(cur)cancel(cur)},true);
+/* hover on mouse */
 d.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var a=hit(e);if(a&&!a.__busy)a.classList.add('tap')},true);
 d.addEventListener('pointerout',function(e){
   if(e.pointerType!=='mouse')return;var a=hit(e);if(!a)return;
   if(e.relatedTarget&&a.contains(e.relatedTarget))return;
-  clearTimeout(a.__t);a.__t=null;if(!a.__busy)a.classList.remove('tap');
+  mouseCancel(a);
 },true);
+/* click: touch and pen already handled by pointer events above */
 d.addEventListener('click',function(e){
   var a=hit(e); if(!a)return;
   if(a.__go){a.__go=false;return}
   e.preventDefault();
   if(lastType==='touch'||lastType==='pen')return;
-  if(a.__busy)return;
-  a.classList.add('tap');clearTimeout(a.__t);
-  a.__t=setTimeout(function(){fire(a)},FILL);
+  mouseBegin(a);
 },true);
 d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')lastType='keyboard'},true);
 /* back from a messenger, another tab, or a page restored from cache: nothing stays filled */

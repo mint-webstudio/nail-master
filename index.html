@@ -276,7 +276,13 @@ function tick(st){
     if(cur===st)cur=null;
     a.__st=null;
     a.__busy=true;
-    var h=a.getAttribute('href');
+    var h=a.getAttribute('href'),u=a.getAttribute('data-url')||h;
+    if(u&&u.charAt(0)!=='#'){
+      /* leaves the page or opens a system dialog: the fill stays until the person comes back */
+      ext=a;
+      act(a);
+      return;
+    }
     act(a);
     a.__t=setTimeout(function(){reset(a)},h&&h.charAt(0)==='#'?300:900);
     return;
@@ -284,7 +290,7 @@ function tick(st){
   a.__raf=requestAnimationFrame(function(){tick(st)});
 }
 /* finger lifted: a short tap completes the fill; a longer hold retracts it at once */
-function release(st){
+function endPress(st){
   if(!st||st.done)return;
   if(cur===st)cur=null;
   var a=st.a;
@@ -295,7 +301,7 @@ function release(st){
   a.style.setProperty('--p',0);
   a.__t=setTimeout(function(){reset(a)},200);
 }
-function cancel(st){
+function cancelPress(st){
   if(!st||st.done)return;
   st.done=true;
   if(cur===st)cur=null;
@@ -311,20 +317,21 @@ d.addEventListener('pointerdown',function(e){
   lastType=e.pointerType;
   if(e.button>0||e.pointerType==='mouse')return;
   var a=hit(e);
-  if(cur&&(!a||cur.a!==a))cancel(cur);
+  if(ext){var x=ext;ext=null;retract(x)}
+  if(cur&&(!a||cur.a!==a))cancelPress(cur);
   if(a)press(a,e);
 },true);
 d.addEventListener('pointermove',function(e){
   if(!cur||e.pointerType==='mouse')return;
-  if(Math.abs(e.clientX-cur.x)>10||Math.abs(e.clientY-cur.y)>10)cancel(cur);
+  if(Math.abs(e.clientX-cur.x)>10||Math.abs(e.clientY-cur.y)>10)cancelPress(cur);
 },true);
 w.addEventListener('pointerup',function(e){
-  if(e.pointerType!=='mouse'&&cur)release(cur);
+  if(e.pointerType!=='mouse'&&cur)endPress(cur);
 },true);
 w.addEventListener('pointercancel',function(e){
-  if(e.pointerType!=='mouse'&&cur)cancel(cur);
+  if(e.pointerType!=='mouse'&&cur)cancelPress(cur);
 },true);
-w.addEventListener('touchcancel',function(){if(cur)cancel(cur)},true);
+w.addEventListener('touchcancel',function(){if(cur)cancelPress(cur)},true);
 /* hover on mouse */
 d.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var a=hit(e);if(a&&!a.__busy)a.classList.add('tap')},true);
 d.addEventListener('pointerout',function(e){
@@ -342,8 +349,19 @@ d.addEventListener('click',function(e){
 },true);
 d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')lastType='keyboard'},true);
 /* back from a messenger, another tab, or a page restored from cache: nothing stays filled */
-['pageshow','pagehide','focus','blur'].forEach(function(t){w.addEventListener(t,resetAll)});
-d.addEventListener('visibilitychange',resetAll);
+var ext=null;
+function retract(a){clearT(a);a.classList.add('rel');a.style.setProperty('--p',0);a.__t=setTimeout(function(){reset(a)},220)}
+/* back on the page: reset everything, retract the external one smoothly */
+function onBack(){
+  var x=ext;ext=null;cur=null;
+  d.querySelectorAll('.bt,.cl').forEach(function(b){if(b!==x)reset(b)});
+  if(x)retract(x);
+}
+/* leaving for a dialog or another app: keep the external fill */
+function onLeave(){if(ext)return;resetAll()}
+['pagehide','blur'].forEach(function(t){w.addEventListener(t,onLeave)});
+['pageshow','focus'].forEach(function(t){w.addEventListener(t,onBack)});
+d.addEventListener('visibilitychange',function(){d.visibilityState==='visible'?onBack():onLeave()});
 d.querySelectorAll('.ac').forEach(function(a,i){var q=a.querySelector('.q'),p=a.querySelector('.pn');q.type='button';p.id='pn'+i;q.setAttribute('aria-controls',p.id);q.addEventListener('click',function(){var o=a.classList.toggle('open');this.setAttribute('aria-expanded',o)})});
 var cr=d.getElementById('cr'),sl=[].slice.call(cr.children),dt=[].slice.call(d.querySelectorAll('#dots button')),N=sl.length,ci=-1,lock=false,lt=0,raf=0;
 var ab=d.querySelectorAll('.ar');function step(){return N>1?sl[1].offsetLeft-sl[0].offsetLeft:cr.clientWidth}
